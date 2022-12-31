@@ -1,12 +1,9 @@
-const logo = (props: {
-  weight: string | number | undefined;
-  height: string | number | undefined;
-}) => {
+const logo = (props: { height: string | number | undefined }) => {
   return (
     <>
       <svg
-        width={props.weight}
         height={props.height}
+        width="auto"
         viewBox="0 0 4286 2601"
         version="1.1"
         fillRule="evenodd"
