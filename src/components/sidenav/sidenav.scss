@@ -5,17 +5,16 @@
     @apply list-none flex flex-row justify-center items-center flex-grow gap-5 max-w-6xl
 }
 .sidenav .link{
-    @apply flex justify-center items-center h-full py-3 px-6
+    @apply flex justify-center items-center h-full py-3 px-6 text-white flex-col
 }
 
 .sidenav li{
+    
     @apply py-3 px-5 bg-icon text-backgound font-monterastBold rounded
 }
 
 .active{
-    @apply relative;
-    &::after{
-        @apply absolute bottom-0 left-0 w-full h-1 bg-orange-400;
-        content: '';
-    }
+    @apply relative transition-all bottom-0  left-0  h-[2px] bg-orange-400 rounded-full ;
+    content: '';
+
 }

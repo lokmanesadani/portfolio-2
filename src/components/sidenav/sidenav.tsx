@@ -1,47 +1,67 @@
 import "./sidenav.scss";
-import { HashLink as Link } from "react-router-hash-link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Logo from "./../logo";
 interface SideNavItem {
   icon: string;
   id: string;
 }
-const Sidenav = () => {
+const Sidenav = (props: { selectedLink: string }) => {
+  const [windowTop, setWindowTop] = useState<boolean>(true);
+  const [selectedLink, setSelectedLink] = useState<string>("");
+  const [automatic, setAutomatic] = useState<boolean>(false);
   const items: SideNavItem[] = [
     { icon: "Home", id: "intro" },
     { icon: "About", id: "about" },
     { icon: "Projects", id: "projects" },
     { icon: "Contact", id: "projects" },
   ];
-  const handleScroll = (div: string) => {
-    const element = document.getElementById(div);
-    return (
-      element &&
-      window.pageYOffset > element.offsetTop - element.offsetHeight / 2 &&
-      window.pageYOffset < element.offsetTop + element.offsetHeight / 2
-    );
-  };
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      const sideNav = document.querySelector(".sidenav");
-      if (sideNav) {
-        if (window.pageYOffset > 0) {
-          sideNav.classList.add("bg-slate-900");
-        } else {
-          sideNav.classList.remove("bg-slate-900");
-        }
-      }
+      setWindowTop(window.pageYOffset > 10);
     });
   }, []);
-
+  const scrollTo = (div: string) => {
+    const element = document.getElementById(`${div}`);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 70,
+        behavior: "smooth",
+      });
+    }
+  };
+  useEffect(() => {
+    if (!automatic) {
+      setSelectedLink(props.selectedLink);
+    }
+  }, [props.selectedLink]);
   return (
-    <div className={`sidenav`}>
+    <div className={`sidenav z-50 ${windowTop ? " bg-slate-900" : ""}`}>
       <ul>
-        <div className="text-3xl font-monterastBold italic mr-auto">LOGO</div>
+        <div className="text-3xl font-monterastBold italic mr-auto text-white">
+          <Logo height={50} />
+        </div>
         {items.map((item, index) => {
           return (
-            <Link className="link active" key={index} to={`#${item.id}`} smooth>
+            <a
+              onClick={() => {
+                setSelectedLink(item.id);
+                setAutomatic(true);
+                scrollTo(item.id);
+                setTimeout(() => {
+                  setAutomatic(false);
+                }, 1000);
+              }}
+              className={`link `}
+              key={index}
+            >
               {item.icon}
-            </Link>
+              <span
+                className={`active ${
+                  selectedLink === item.id ? " w-full" : " w-0"
+                }`}
+              ></span>
+            </a>
           );
         })}
         <li>Download CV</li>

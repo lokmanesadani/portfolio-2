@@ -1,5 +1,5 @@
 const Projects = () => {
-  return <div>Projects</div>;
+  return <div className="max-w-6xl w-full">Projects</div>;
 };
 
 export default Projects;
