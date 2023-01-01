@@ -6,59 +6,84 @@ import Sidenav from "./components/sidenav/sidenav";
 import { useEffect, useRef, useState } from "react";
 function App() {
   const [selectedLink, setSlecectedLink] = useState<string>("");
-  const intro = useRef<HTMLDivElement>(null);
-  const about = useRef<HTMLDivElement>(null);
-  const projects = useRef<HTMLDivElement>(null);
+
+  const [trackScroll, setTrackScroll] = useState(true);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const timeoutId = useRef<number | null>(null);
+  const handleScroll = () => {
+    if (trackScroll) {
+      setIsScrolling(true);
+
+      const sections = document.querySelectorAll(".section");
+
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionHeight = section.clientHeight;
+        if (
+          pageYOffset >= sectionTop - sectionHeight / 2 &&
+          pageYOffset < sectionTop + sectionHeight / 2
+        ) {
+          console.log(section.id);
+
+          setSlecectedLink(section.id);
+        }
+      });
+    }
+  };
+
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (intro.current) {
-        if (
-          window.pageYOffset >=
-          intro.current.offsetTop - window.innerHeight / 2.2
-        ) {
-          setSlecectedLink("intro");
-        }
-      }
-      if (about.current) {
-        if (
-          window.pageYOffset >=
-          about.current.offsetTop - window.innerHeight / 2.2
-        ) {
-          setSlecectedLink("about");
-        }
-      }
-      if (projects.current) {
-        if (
-          window.pageYOffset >=
-          projects.current.offsetTop - window.innerHeight / 2.2
-        ) {
-          setSlecectedLink("projects");
-        }
-      }
-    });
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [trackScroll]);
+
+  const handleButtonClick = (button: string) => {
+    setTrackScroll(false);
+    setSlecectedLink(button);
+    const element = document.getElementById(`${button}`);
+    if (element) {
+      setTrackScroll(false);
+      window.scrollTo({
+        top: element.offsetTop - 70,
+        behavior: "smooth",
+      });
+    }
+    if (timeoutId.current) {
+      clearTimeout(timeoutId.current);
+    }
+    timeoutId.current = setTimeout(() => {
+      setTrackScroll(true);
+      setIsScrolling(false);
+    }, 1000);
+  };
 
   return (
     <Layout>
-      <Sidenav selectedLink={selectedLink} />
+      <Sidenav
+        selectedLink={selectedLink}
+        isScrolling={trackScroll}
+        scrollTo={handleButtonClick}
+      />
       <div
-        ref={intro}
         id="intro"
-        className="h-[calc(100vh-70px)] w-full flex justify-center"
+        className="section h-[calc(100vh-70px)] w-full flex justify-center"
       >
         <Introduction />
       </div>
       <div
-        ref={about}
         id="about"
-        className="h-[calc(100vh-70px)] w-full flex justify-center"
+        className="section h-[calc(100vh-70px)] w-full flex justify-center bg-slate-900"
       >
         <About />
       </div>
       <div
-        ref={projects}
         id="projects"
-        className="h-[calc(100vh-70px)] w-full flex justify-center"
+        className="section h-[calc(100vh-70px)] w-full flex justify-center"
+      >
+        <Projects />
+      </div>
+      <div
+        id="contact"
+        className="section h-[calc(100vh-70px)] w-full flex justify-center"
       >
         <Projects />
       </div>

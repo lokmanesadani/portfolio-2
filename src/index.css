@@ -8,8 +8,21 @@
 }
 
 @font-face {
+  font-family: "Monterast SemiBold";
+  src: url("/fonts/Montserrat-SemiBold.ttf");
+}
+@font-face {
   font-family: "Monterast Bold";
   src: url("/fonts/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Monterast Black";
+  src: url("/fonts/Montserrat-Black.ttf");
+}
+@font-face {
+  font-family: "Cairo Bold";
+  src: url("/fonts/Cairo-Regular.ttf");
 }
 :root {
   margin: 0;

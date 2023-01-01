@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         monterast: ["Monterast"],
         monterastBold: ["Monterast Bold"],
+        monterastBlack: ["Monterast Black"],
+        monterastSemiBold: ["Monterast SemiBold"],
+        cairoBold: ["Cairo Bold"],
       },
     },
   },

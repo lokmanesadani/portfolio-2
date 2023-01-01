@@ -5,35 +5,29 @@ interface SideNavItem {
   icon: string;
   id: string;
 }
-const Sidenav = (props: { selectedLink: string }) => {
+const Sidenav = (props: {
+  selectedLink: string;
+  isScrolling: boolean;
+  scrollTo: (arg0: string) => void;
+}) => {
   const [windowTop, setWindowTop] = useState<boolean>(true);
   const [selectedLink, setSelectedLink] = useState<string>("");
-  const [automatic, setAutomatic] = useState<boolean>(false);
+
   const items: SideNavItem[] = [
     { icon: "Home", id: "intro" },
     { icon: "About", id: "about" },
     { icon: "Projects", id: "projects" },
-    { icon: "Contact", id: "projects" },
+    { icon: "Contact", id: "contact" },
   ];
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setWindowTop(window.pageYOffset > 10);
     });
-  }, []);
-  const scrollTo = (div: string) => {
-    const element = document.getElementById(`${div}`);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 70,
-        behavior: "smooth",
-      });
-    }
-  };
+  }, [windowTop]);
+
   useEffect(() => {
-    if (!automatic) {
-      setSelectedLink(props.selectedLink);
-    }
+    setSelectedLink(props.selectedLink);
   }, [props.selectedLink]);
   return (
     <div className={`sidenav z-50 ${windowTop ? " bg-slate-900" : ""}`}>
@@ -45,12 +39,7 @@ const Sidenav = (props: { selectedLink: string }) => {
           return (
             <a
               onClick={() => {
-                setSelectedLink(item.id);
-                setAutomatic(true);
-                scrollTo(item.id);
-                setTimeout(() => {
-                  setAutomatic(false);
-                }, 1000);
+                props.scrollTo(item.id);
               }}
               className={`link `}
               key={index}
@@ -58,7 +47,7 @@ const Sidenav = (props: { selectedLink: string }) => {
               {item.icon}
               <span
                 className={`active ${
-                  selectedLink === item.id ? " w-full" : " w-0"
+                  selectedLink === item.id ? " w-full" : "hover"
                 }`}
               ></span>
             </a>

@@ -14,7 +14,15 @@
 }
 
 .active{
-    @apply relative transition-all bottom-0  left-0  h-[2px] bg-orange-400 rounded-full ;
+    @apply relative transition-all cursor-pointer bottom-0  left-0  h-[2px] bg-orange-400 rounded-full ;
     content: '';
 
 }
+.hover{
+    @apply w-0 
+}
+
+.sidenav .link:hover > .hover{
+    @apply w-1/3
+}
+

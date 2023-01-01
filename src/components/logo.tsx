@@ -3,7 +3,7 @@ const logo = (props: { height: string | number | undefined }) => {
     <>
       <svg
         height={props.height}
-        width="auto"
+        width="100%"
         viewBox="0 0 4286 2601"
         version="1.1"
         fillRule="evenodd"
