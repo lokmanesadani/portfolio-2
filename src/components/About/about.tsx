@@ -25,7 +25,7 @@ const About = () => {
         <div className="flex flex-col sm:flex-row gap-12 max-sm:items-center">
           <img
             className=" sm:w-56 md:w-80 w-4/5 border-[6px] m-0"
-            src="/src/assets/Signature.jpg"
+            src="/Signature.jpg"
             alt=""
           />
           <div className=" text-justify text-white ">
