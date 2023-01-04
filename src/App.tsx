@@ -65,25 +65,25 @@ function App() {
       />
       <div
         id="intro"
-        className="section h-screen sm:h-[calc(90vh-70px)] w-full flex justify-center overflow-x-hidden "
+        className="section min-h-[90vh] w-full flex justify-center overflow-x-hidden "
       >
         <Introduction />
       </div>
       <div
         id="about"
-        className="section h-[calc(90vh-70px)] w-full flex justify-center bg-slate-900"
+        className="section  min-h-[90vh] w-full flex justify-center bg-slate-900 overflow-x-hidden"
       >
         <About />
       </div>
       <div
         id="projects"
-        className="section h-[calc(90vh-70px)] w-full flex justify-center"
+        className="section min-h-[90vh]  w-full flex justify-center"
       >
         <Projects />
       </div>
       <div
         id="contact"
-        className="section h-[calc(90vh-70px)] w-full flex justify-center bg-slate-900"
+        className="section min-h-[90vh] w-full flex justify-center bg-slate-900"
       >
         <Projects />
       </div>

@@ -5,7 +5,7 @@
     @apply flex flex-col overflow-hidden  sm:flex-row sm:justify-center items-start sm:items-center flex-grow  max-w-6xl px-6
 }
 .sidenav ul .list{
-    @apply list-none shrink-0 overflow-hidden text-sm md:text-base flex flex-col sm:flex-row sm:justify-center items-start sm:items-center flex-grow gap-5 max-w-6xl sm:px-6
+    @apply list-none shrink-0 overflow-hidden text-sm md:text-base flex flex-col sm:flex-row sm:justify-end sm:pr-0 items-start sm:items-center flex-grow gap-5 max-w-6xl sm:px-6 justify-end 
 }
 .sidenav .link{
     @apply flex shrink justify-center items-center h-full py-3 sm:px-6 text-white flex-col;

@@ -8,23 +8,23 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 const Introduction = () => {
   return (
-    <div className="max-w-6xl w-full  pb-10 flex flex-col px-6">
+    <div className="max-w-6xl w-full max-sm:pt-[70px]  pb-10 flex flex-col px-6">
       <div
         className="flex flex-1  flex-col-reverse md:flex-row max-md:flex-1 
       "
       >
         <div className="w-fullflex-1 flex flex-col text-white justify-center">
-          <div className="mb-2 text-icon font-monterastSemiBold text-xl sm:text-3xl ">
+          <div className="mb-5 text-icon font-monterastSemiBold text-xl sm:text-3xl ">
             welcome !
           </div>
-          <div className="text-2xl md:text-4xl font-monterastBold mb-2">
+          <div className="text-2xl md:text-4xl font-monterastBold mb-5">
             I'm Lokmane Sadani
           </div>
-          <div className="font-cairoBold italic mb-2 text-orange-100">
+          <div className="font-cairoBold text-xl italic mb-5 text-orange-100">
             a MERN Stack developer from algiers
           </div>
-          <div className="mb-6  max-sm:text-sm">
-            I will help you build your ideas and bring it to reality.
+          <div className="mb-14  max-sm:text-sm">
+            Transforming your vision into a beautiful, functional reality.
           </div>
           <span className="px-4 py-2 w-fit max-sm:text-sm text-backgound font-monterastSemiBold bg-icon rounded-md">
             Hire me

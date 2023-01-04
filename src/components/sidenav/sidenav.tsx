@@ -51,7 +51,7 @@ const Sidenav = (props: {
             ></div>
           </div>
         </div>
-        <div className={`list max-sm:pt-2 max-sm:pb-4`}>
+        <div className={`list p-0 max-sm:pt-2 max-sm:pb-4`}>
           {items.map((item, index) => {
             return (
               <a
