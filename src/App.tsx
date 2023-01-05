@@ -13,18 +13,16 @@ function App() {
   const handleScroll = () => {
     if (trackScroll) {
       setIsScrolling(true);
-
       const sections = document.querySelectorAll(".section");
 
       sections.forEach((section) => {
         const sectionTop = section.getBoundingClientRect().top;
-        const sectionHeight = section.clientHeight;
-        if (
-          pageYOffset >= sectionTop - sectionHeight / 2 &&
-          pageYOffset < sectionTop + sectionHeight / 2
-        ) {
-          console.log(section.id);
+        const sectionBottom = section.getBoundingClientRect().bottom;
 
+        if (
+          sectionTop <= window.innerHeight / 2 &&
+          sectionBottom >= window.innerHeight / 2
+        ) {
           setSlecectedLink(section.id);
         }
       });
@@ -71,7 +69,7 @@ function App() {
       </div>
       <div
         id="about"
-        className="section  min-h-[90vh] w-full flex justify-center bg-slate-900 overflow-x-hidden"
+        className="section  min-h-[80vh] w-full flex justify-center bg-slate-900 overflow-x-hidden"
       >
         <About />
       </div>
