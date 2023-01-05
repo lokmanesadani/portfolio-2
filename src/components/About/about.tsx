@@ -70,7 +70,7 @@ const About = () => {
 
           <div className=" text-justify w-full text-white ">
             <span className=" text-2xl font-monterastSemiBold">Intrests</span>
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-4 py-4">
               {Intrests.map((intrest, index) => {
                 return (
                   <div className="flex rounded-xl items-center justify-center p-4 aspect-square h-28 bg-slate-500 flex-col gap-2">
