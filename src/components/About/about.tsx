@@ -31,9 +31,9 @@ const About = () => {
         About me
       </span>
       <div className="w-full backdrop-blur-sm rounded-2xl flex flex-col h-full justify-evenly">
-        <div className="flex flex-col sm:flex-row gap-12 max-sm:items-center">
+        <div className="flex flex-col md:flex-row gap-12 max-md:items-center">
           <img
-            className=" sm:w-56 md:w-80 w-4/5 border-[6px] m-0"
+            className=" sm:w-96 md:w-80 w-4/6 shrink-0 object-cover border-[6px] m-0"
             src="/Signature.jpg"
             alt=""
           />
