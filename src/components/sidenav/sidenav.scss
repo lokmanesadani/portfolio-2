@@ -2,7 +2,7 @@
     @apply  fixed sm:sticky top-0 left-0 max-sm:border-b-[1px] border-slate-300 border-opacity-50   w-screen flex  justify-center transition-all duration-500 ease-in-out
 }
 .sidenav ul{
-    @apply flex flex-col overflow-hidden  sm:flex-row sm:justify-center items-start sm:items-center flex-grow  max-w-6xl px-6
+    @apply flex flex-col overflow-hidden  sm:flex-row sm:justify-center items-start sm:items-center flex-grow  max-w-7xl px-6
 }
 .sidenav ul .list{
     @apply list-none shrink-0 overflow-hidden text-sm md:text-base flex flex-col sm:flex-row sm:justify-end sm:pr-0 items-start sm:items-center flex-grow gap-5 max-w-6xl sm:px-6 justify-end 

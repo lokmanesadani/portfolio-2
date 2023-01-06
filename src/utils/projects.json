@@ -1,95 +1,74 @@
 [
-    {
-      "title": "Portfolio",
-      "date": "2021",
-      "type": "Personel",
-      "technology": "React, TailwindCSS",
-      "description":
-        "This is my portfolio website. I have used React and TailwindCSS to build this website.",
-      "link": "lokmanesadani.vercel.app"
-    },
-    {
-      "title": "E-commerce",
-      "date": "2021",
-      "type": "Professional",
-      "technology": "React, TailwindSS",
-      "description":
-        "This is an e-commerce website. I have used React and TailwindCSS to build this website.",
-      "link": "google.com"
-    },
-    {
-        "title": "Portfolio",
-        "date": "2021",
-        "type": "Personel",
-        "technology": "React, TailwindCSS",
-        "description":
-          "This is my portfolio website. I have used React and TailwindCSS to build this website.",
-        "link": "lokmanesadani.vercel.app"
-      },
-      {
-        "title": "E-commerce",
-        "date": "2021",
-        "type": "Professional",
-        "technology": "React, TailwindSS",
-        "description":
-          "This is an e-commerce website. I have used React and TailwindCSS to build this website.",
-        "link": "google.com"
-      },
-      {
-        "title": "Portfolio",
-        "date": "2021",
-        "type": "Personel",
-        "technology": "React, TailwindCSS",
-        "description":
-          "This is my portfolio website. I have used React and TailwindCSS to build this website.",
-        "link": "lokmanesadani.vercel.app"
-      },
-      {
-        "title": "E-commerce",
-        "date": "2021",
-        "type": "Professional",
-        "technology": "React, TailwindSS",
-        "description":
-          "This is an e-commerce website. I have used React and TailwindCSS to build this website.",
-        "link": "google.com"
-      }
-      ,
-    {
-        "title": "Portfolio",
-        "date": "2021",
-        "type": "Personel",
-        "technology": "React, TailwindCSS",
-        "description":
-          "This is my portfolio website. I have used React and TailwindCSS to build this website.",
-        "link": "lokmanesadani.vercel.app"
-      },
-      {
-        "title": "E-commerce",
-        "date": "2021",
-        "type": "Professional",
-        "technology": "React, TailwindSS",
-        "description":
-          "This is an e-commerce website. I have used React and TailwindCSS to build this website.",
-        "link": "google.com"
-      }
-      ,
-    {
-        "title": "Portfolio",
-        "date": "2021",
-        "type": "Personel",
-        "technology": "React, TailwindCSS",
-        "description":
-          "This is my portfolio website. I have used React and TailwindCSS to build this website.",
-        "link": "lokmanesadani.vercel.app"
-      },
-      {
-        "title": "E-commerce",
-        "date": "2021",
-        "type": "Professional",
-        "technology": "React, TailwindSS",
-        "description":
-          "This is an e-commerce website. I have used React and TailwindCSS to build this website.",
-        "link": "google.com"
-      }
-    
-  ]
+  {
+    "title": "Portfolio",
+    "date": "2021",
+    "type": "Personel",
+    "technology": "React, TailwindCSS",
+    "description": "This is my portfolio website. I have used React and TailwindCSS to build this website.",
+    "link": "lokmanesadani.vercel.app"
+  },
+  {
+    "title": "E-commerce",
+    "date": "2021",
+    "type": "Professional",
+    "technology": "React, TailwindSS",
+    "description": "This is an e-commerce website. I have used React and TailwindCSS to build this website.",
+    "link": "google.com"
+  },
+  {
+    "title": "Portfolio",
+    "date": "2021",
+    "type": "Personel",
+    "technology": "React, TailwindCSS",
+    "description": "This is my portfolio website. I have used React and TailwindCSS to build this website.",
+    "link": "lokmanesadani.vercel.app"
+  },
+  {
+    "title": "E-commerce",
+    "date": "2021",
+    "type": "Professional",
+    "technology": "React, TailwindSS",
+    "description": "This is an e-commerce website. I have used React and TailwindCSS to build this website.",
+    "link": "google.com"
+  },
+  {
+    "title": "Portfolio",
+    "date": "2021",
+    "type": "Personel",
+    "technology": "React, TailwindCSS",
+    "description": "This is my portfolio website. I have used React and TailwindCSS to build this website.",
+    "link": "lokmanesadani.vercel.app"
+  },
+  {
+    "title": "E-commerce",
+    "date": "2021",
+    "type": "Professional",
+    "technology": "React, TailwindSS",
+    "description": "This is an e-commerce website. I have used React and TailwindCSS to build this website.",
+    "link": "google.com"
+  },
+  {
+    "title": "Portfolio",
+    "date": "2021",
+    "type": "Personel",
+    "technology": "React, TailwindCSS",
+    "description": "This is my portfolio website. I have used React and TailwindCSS to build this website.",
+    "link": "lokmanesadani.vercel.app"
+  },
+  {
+    "title": "E-commerce",
+    "date": "2021",
+    "type": "Professional",
+    "technology": "React, TailwindSS",
+    "description": "This is an e-commerce website. I have used React and TailwindCSS to build this website.",
+    "link": "google.com"
+  },
+  {
+    "title": "Portfolio",
+    "date": "2021",
+    "type": "Personel",
+    "technology": "React, TailwindCSS",
+    "description": "This is my portfolio website. I have used React and TailwindCSS to build this website.",
+    "link": "lokmanesadani.vercel.app"
+  }
+]

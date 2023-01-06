@@ -1,0 +1,15 @@
+.card{
+    @apply  overflow-hidden rounded  relative col-span-1 h-[400px] w-full max-w-md justify-center
+}
+.card:hover > .backdrop{
+    @apply  opacity-70 visible
+}
+.backdrop{
+    @apply  absolute rounded-sm top-0 left-0 transition-all opacity-0  z-20 invisible h-full w-full bg-black content-['']
+}
+.card:hover > .content{
+    @apply  opacity-100 visible top-0
+}
+.content{
+    @apply  absolute p-6 text-white top-3 left-0 transition-all opacity-0  z-30 invisible h-full w-full content-['']
+}

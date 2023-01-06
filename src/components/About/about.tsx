@@ -26,7 +26,7 @@ const About = () => {
   ];
 
   return (
-    <div className="max-w-6xl w-full  py-10 flex flex-col items-center px-6">
+    <div className="max-w-7xl w-full  py-10 flex flex-col items-center px-6">
       <span className="text-white font-monterastSemiBold text-4xl pb-16 pt-6">
         About me
       </span>
@@ -41,7 +41,9 @@ const About = () => {
           <div className=" text-justify text-white text-lg leading-10">
             <div className="text-2xl font-monterastSemiBold pb-5">
               SADANI lokmane abdelaziz |{" "}
-              <span className="text-icon">MERN Stack developer</span>
+              <span className=" text-white font-monterastBold rounded-xl bg-text px-4 py-2">
+                MERN Stack developer
+              </span>
             </div>
             My name is{" "}
             <span className=" text-icon">SADANI Lokmane Abdelaziz</span>, i'm a
@@ -58,7 +60,10 @@ const About = () => {
             </span>
             {Infos.map((info, index) => {
               return (
-                <div className="flex flex-row sm:flex-row gap-12 pt-4">
+                <div
+                  key={index}
+                  className="flex flex-row sm:flex-row gap-12 pt-4"
+                >
                   <span className="text-icon text-xl font-monterast">
                     {info.title}
                   </span>
@@ -73,7 +78,10 @@ const About = () => {
             <div className="flex flex-wrap gap-4 py-4">
               {Intrests.map((intrest, index) => {
                 return (
-                  <div className="flex rounded-xl items-center justify-center p-4 aspect-square h-28 bg-slate-500 flex-col gap-2">
+                  <div
+                    key={index}
+                    className="flex rounded-xl items-center justify-center p-4 aspect-square h-28 bg-slate-500 flex-col gap-2"
+                  >
                     <div className="h-12">
                       <intrest.icon />
                     </div>

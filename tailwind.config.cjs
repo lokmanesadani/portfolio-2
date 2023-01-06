@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         backgound: "#011122",
         icon: "#FFAE00",
+        text: "#D32638",
       },
       fontFamily: {
         monterast: ["Monterast"],

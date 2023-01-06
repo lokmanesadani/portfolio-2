@@ -1,9 +1,10 @@
 import Layout from "./layouts/layout";
 import Introduction from "./components/intro/Introduction";
 import About from "./components/About/about";
-import Projects from "./components/Projects/projects";
+import Projects from "./components/projects/projects";
 import Sidenav from "./components/sidenav/sidenav";
 import { useEffect, useRef, useState } from "react";
+import Contact from "./components/contact/contact";
 function App() {
   const [selectedLink, setSlecectedLink] = useState<string>("");
 
@@ -83,7 +84,7 @@ function App() {
         id="contact"
         className="section min-h-[90vh] w-full flex justify-center bg-slate-900"
       >
-        <Projects />
+        <Contact />
       </div>
     </Layout>
   );

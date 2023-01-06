@@ -7,8 +7,15 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 const Introduction = () => {
+  const RedirectToGmail = () => {
+    const recipient = "hl_sadani@esi.dz";
+
+    const gmailUrl = `https://mail.google.com/mail/u/0/?to=hl_sadani@esi.dz&fs=1&tf=cm`;
+
+    window.location.href = gmailUrl;
+  };
   return (
-    <div className="max-w-6xl w-full max-sm:pt-[70px]  pb-10 flex flex-col px-6">
+    <div className="max-w-7xl w-full max-sm:pt-[70px]  pb-10 flex flex-col px-6">
       <div
         className="flex flex-1  flex-col-reverse md:flex-row max-md:flex-1 
       "
@@ -26,7 +33,10 @@ const Introduction = () => {
           <div className="mb-14  max-sm:text-sm">
             Transforming your vision into a beautiful, functional reality.
           </div>
-          <span className="px-4 py-2 w-fit max-sm:text-sm text-backgound font-monterastSemiBold bg-icon rounded-md">
+          <span
+            onClick={RedirectToGmail}
+            className="px-6 cursor-pointer py-3 w-fit max-sm:text-base text-lg text-white font-monterast bg-text rounded-md"
+          >
             Hire me
           </span>
         </div>
