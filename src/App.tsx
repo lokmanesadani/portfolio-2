@@ -64,25 +64,22 @@ function App() {
       />
       <div
         id="intro"
-        className="section min-h-[90vh] w-full flex justify-center overflow-x-hidden "
+        className="section w-full flex justify-center overflow-x-hidden "
       >
         <Introduction />
       </div>
       <div
         id="about"
-        className="section  min-h-[80vh] w-full flex justify-center bg-slate-900 overflow-x-hidden"
+        className="section  w-full flex justify-center bg-slate-900 overflow-x-hidden"
       >
         <About />
       </div>
-      <div
-        id="projects"
-        className="section min-h-[90vh]  w-full flex justify-center"
-      >
+      <div id="projects" className="section   w-full flex justify-center">
         <Projects />
       </div>
       <div
         id="contact"
-        className="section min-h-[90vh] w-full flex justify-center bg-slate-900"
+        className="section w-full flex justify-center bg-slate-900"
       >
         <Contact />
       </div>

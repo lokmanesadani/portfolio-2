@@ -8,8 +8,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 const Introduction = () => {
   const RedirectToGmail = () => {
-    const recipient = "hl_sadani@esi.dz";
-
     const gmailUrl = `https://mail.google.com/mail/u/0/?to=hl_sadani@esi.dz&fs=1&tf=cm`;
 
     window.location.href = gmailUrl;
@@ -20,7 +18,7 @@ const Introduction = () => {
         className="flex flex-1  flex-col-reverse md:flex-row max-md:flex-1 
       "
       >
-        <div className="w-fullflex-1 flex flex-col text-white justify-center">
+        <div className="w-fullflex-1 flex flex-col text-white justify-center h-[450px] sm:h-[700px]">
           <div className="mb-5 text-icon font-monterastSemiBold text-xl sm:text-3xl ">
             welcome !
           </div>

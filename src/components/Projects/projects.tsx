@@ -15,13 +15,12 @@ const Projects = () => {
   const [index, setIndex] = useState<number>(0);
   const [show, setShow] = useState<boolean>(false);
   const [filtered, setFiltered] = useState<Project[]>(ProjectsData);
-  const [showed, setShowed] = useState<Project[]>(filtered.slice(0, 6));
   useEffect(() => {
     console.log(filtered);
   }, [index]);
 
   return (
-    <div className="max-w-7xl w-full overflow-hidden transition-all  py-10 flex flex-col items-center px-6">
+    <div className="max-w-7xl w-full overflow-hidden  py-10 flex flex-col items-center px-6">
       <span className="text-white font-monterastSemiBold text-4xl pb-10 pt-4">
         Projects
       </span>
@@ -35,7 +34,6 @@ const Projects = () => {
           onClick={() => {
             setSlecectedLink("All");
             setFiltered(ProjectsData);
-            setShowed(ProjectsData.slice(0, 6));
             setShow(false);
           }}
         >
@@ -53,7 +51,6 @@ const Projects = () => {
               (project) => project.type === "Personel"
             );
             setFiltered(filteredProjects);
-            setShowed(filteredProjects.slice(0, 6));
             setShow(false);
           }}
         >
@@ -71,17 +68,21 @@ const Projects = () => {
               (project) => project.type === "Professional"
             );
             setFiltered(filteredProjects);
-            setShowed(filteredProjects.slice(0, 6));
             setShow(false);
           }}
         >
           Professional
         </div>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3  gap-6 place-items-center grid-cols-1 h-fit w-full py-16 ">
-        {showed.map((project, index) => {
+      <div
+        className={`grid md:grid-cols-2 lg:grid-cols-3  gap-6 place-items-center grid-cols-1 transition-all w-full py-16`}
+      >
+        {filtered.map((project, index) => {
           return (
-            <div key={index} className="card">
+            <div
+              key={index}
+              className={`card ${index > 5 && !show ? "hidden" : ""}`}
+            >
               <div className=" absolute top-0 left-0 z-10 h-full w-full ">
                 <img
                   src={`https://source.unsplash.com/random/200x200?sig=${index}`}
@@ -123,11 +124,6 @@ const Projects = () => {
       <div
         onClick={() => {
           setShow(!show);
-          if (show) {
-            setShowed(filtered.slice(0, 6));
-          } else {
-            setShowed(filtered);
-          }
         }}
         className="px-8 py-4 rounded-lg bg-text text-white"
       >

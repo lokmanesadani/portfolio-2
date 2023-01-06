@@ -39,9 +39,9 @@ const About = () => {
           />
 
           <div className=" text-justify text-white text-lg leading-10">
-            <div className="text-2xl font-monterastSemiBold pb-5">
-              SADANI lokmane abdelaziz |{" "}
-              <span className=" text-white font-monterastBold rounded-xl bg-text px-4 py-2">
+            <div className="text-2xl text-left font-monterastSemiBold pb-5">
+              SADANI lokmane abdelaziz &nbsp;
+              <span className=" text-white inline-block font-monterastBold rounded-xl bg-text px-4 py-2">
                 MERN Stack developer
               </span>
             </div>
