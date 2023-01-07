@@ -1,8 +1,8 @@
-import Coffee from "./../coffee";
-import Anime from "./../anime";
-import Music from "./../music";
-import Cinema from "./../cinema";
-import Joystick from "./../joystick";
+import Coffee from "../../components/coffee";
+import Anime from "../../components/anime";
+import Music from "../../components/music";
+import Cinema from "../../components/cinema";
+import Joystick from "../../components/joystick";
 interface Intrest {
   icon: any;
   name: string;

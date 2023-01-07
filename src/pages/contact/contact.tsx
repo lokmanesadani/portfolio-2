@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
-import FormInput from "../formInput/formInput";
-import Developer from "./../developer";
+import FormInput from "../../components/formInput/formInput";
 
 const Contact = () => {
   const {

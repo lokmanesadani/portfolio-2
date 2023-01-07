@@ -1,10 +1,10 @@
 import Layout from "./layouts/layout";
-import Introduction from "./components/intro/Introduction";
-import About from "./components/About/about";
-import Projects from "./components/projects/projects";
+import Introduction from "./pages/intro/Introduction";
+import About from "./pages/About/about";
+import Projects from "./pages/projects/projects";
 import Sidenav from "./components/sidenav/sidenav";
 import { useEffect, useRef, useState } from "react";
-import Contact from "./components/contact/contact";
+import Contact from "./pages/contact/contact";
 function App() {
   const [selectedLink, setSlecectedLink] = useState<string>("");
 
