@@ -31,7 +31,7 @@ const Sidenav = (props: {
   }, [props.selectedLink]);
   return (
     <div
-      className={`sidenav z-50 transition-all ${
+      className={`sidenav z-50 transition-colors ${
         opened ? "max-sm:h-[400px] " : "h-[70px]"
       } ${windowTop ? " bg-slate-900 " : " bg-backgound "}`}
     >

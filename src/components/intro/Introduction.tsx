@@ -1,4 +1,5 @@
-import Spline from "@splinetool/react-spline";
+// import Spline from "@splinetool/react-spline";
+import Developer from "../../components/developer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -18,7 +19,7 @@ const Introduction = () => {
         className="flex flex-1  flex-col-reverse md:flex-row max-md:flex-1 
       "
       >
-        <div className="w-fullflex-1 flex flex-col text-white justify-center h-[450px] sm:h-[700px]">
+        <div className="w-full flex-1 flex flex-col text-white justify-center h-[450px] sm:h-[700px]">
           <div className="mb-5 text-icon font-monterastSemiBold text-xl sm:text-3xl ">
             welcome !
           </div>
@@ -43,6 +44,7 @@ const Introduction = () => {
             className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 left-1/2 scale-[0.6] sm:scale-75 md:scale-100 lg:scale-[1.1]"
             scene="https://prod.spline.design/tQCKIPfZheceMkAF/scene.splinecode"
           /> */}
+          <Developer />
         </div>
       </div>
       <div className="col-span-2 sm:col-start-2 flex-[0.2] text-white flex  justify-evenly text-xl sm:text-3xl items-center">
