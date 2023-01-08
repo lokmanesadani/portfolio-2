@@ -35,13 +35,12 @@ const Contact = () => {
       <span className="text-white font-monterastSemiBold  text-4xl pb-10 pt-4">
         Contact us
       </span>
-      <div className="flex flex-col md:flex-row w-full py-10">
-        <div className="w-full">{/* <Developer /> */}</div>
+      <div className="flex flex-col md:flex-row w-full sm:w-2/3 py-10">
         <form
           className=" flex flex-col items-center w-full"
           onSubmit={handleSubmit((data) => console.log(data))}
         >
-          <div className="grid w-full grid-cols-2 gap-x-5 gap-y-8 grow">
+          <div className="grid w-full grid-cols-1 sm:grid-cols-2 gap-x-5 sm:gap-y-8 gap-y-5 grow">
             {fields.map((field) => (
               <FormInput
                 key={field.name}
@@ -54,7 +53,7 @@ const Contact = () => {
             ))}
           </div>
           <textarea
-            className="bg-transparent border border-slate-500 text-slate-300 focus:border-slate-100 w-full px-4 text-lg py-4 rounded focus:outline-none resize-none mt-8"
+            className="bg-transparent border border-slate-500 text-slate-300 focus:border-slate-100 w-full px-3 sm:px-4 text-lg py-3 sm:py-4 aspect-[2.5] min-h-[300px] rounded focus:outline-none resize-none mt-6 sm:mt-8"
             {...register("message", { required: true })}
             name="message"
             placeholder="message"

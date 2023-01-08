@@ -1,5 +1,5 @@
 .sidenav{
-    @apply  fixed sm:sticky top-0 left-0 max-sm:border-b-[1px] border-slate-300 border-opacity-50   w-screen flex  justify-center transition-all duration-500 ease-in-out
+    @apply  fixed sm:sticky top-0 left-0 max-sm:border-b-[1px] border-slate-300 border-opacity-50   w-full flex  justify-center transition-all duration-500 ease-in-out
 }
 .sidenav ul{
     @apply flex flex-col overflow-hidden  sm:flex-row sm:justify-center items-start sm:items-center flex-grow  max-w-7xl px-6

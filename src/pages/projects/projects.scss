@@ -1,5 +1,5 @@
 .card{
-    @apply  overflow-hidden rounded  relative col-span-1 h-[400px] w-full max-w-md justify-center
+    @apply  overflow-hidden rounded  relative col-span-1  w-full aspect-[0.9]  max-w-md justify-center
 }
 .card:hover > .backdrop{
     @apply  opacity-70 visible
@@ -11,5 +11,5 @@
     @apply  opacity-100 visible top-0
 }
 .content{
-    @apply  absolute p-6 text-white top-3 left-0 transition-all opacity-0  z-30 invisible h-full w-full content-['']
+    @apply  absolute p-3 sm:p-6 text-white top-3 left-0 transition-all opacity-0  z-30 invisible h-full w-full content-['']
 }

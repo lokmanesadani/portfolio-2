@@ -11,7 +11,7 @@ const FormInput = (props: {
   return (
     <div className="">
       <input
-        className="bg-transparent border border-slate-500 text-slate-300 focus:border-slate-100 w-full px-4 text-lg py-6 rounded focus:outline-none"
+        className="bg-transparent border border-slate-500 text-slate-300 focus:border-slate-100 w-full px-3 sm:px-4 text-lg sm:py-6 py-4 rounded focus:outline-none"
         {...props.reg}
         name={props.name}
         type={props.type}

@@ -93,22 +93,24 @@ const Projects = () => {
                     return (
                       <span
                         key={index}
-                        className="px-2 py-1 bg-text text-white rounded-lg mr-2"
+                        className="px-2 py-1 max-sm:text-sm bg-text text-white rounded-lg mr-2"
                       >
                         {tech}
                       </span>
                     );
                   })}
                 </div>
-                <div className="pt-6 text-lg font-monterastBold">
+                <div className="pt-3 sm:pt-6 text-sm sm:text-lg font-monterastBold">
                   {project.title}
                 </div>
-                <div className="pt-1 text-justify">{project.description}</div>
+                <div className="max-sm:text-xs pt-1 text-justify">
+                  {project.description}
+                </div>
                 <div className="mt-auto flex flex-row justify-between items-center">
-                  <span className=" font-monterastSemiBold">
+                  <span className=" max-sm:text-sm font-monterastSemiBold">
                     {project.date}
                   </span>
-                  <span className=" bg-sky-700 px-3 py-2 rounded">
+                  <span className=" bg-sky-700 max-sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded">
                     Live demo
                   </span>
                 </div>
