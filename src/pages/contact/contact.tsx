@@ -1,12 +1,21 @@
 import { useForm } from "react-hook-form";
 import FormInput from "../../components/formInput/formInput";
-
+import emailjs from "emailjs-com";
+const sendEmail = (data: any) => {
+  emailjs.send(
+    "service_c6yrlwg",
+    "template_xwsy2ao",
+    { ...data },
+    "iL92_1oT4DwqtiZeA"
+  );
+};
 const Contact = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const fields = [
     {
       type: "text",
@@ -38,7 +47,10 @@ const Contact = () => {
       <div className="flex flex-col md:flex-row w-full sm:w-2/3 py-10">
         <form
           className=" flex flex-col items-center w-full"
-          onSubmit={handleSubmit((data) => console.log(data))}
+          onSubmit={handleSubmit((data) => {
+            console.log(data);
+            sendEmail(data);
+          })}
         >
           <div className="grid w-full grid-cols-1 sm:grid-cols-2 gap-x-5 sm:gap-y-8 gap-y-5 grow">
             {fields.map((field) => (
