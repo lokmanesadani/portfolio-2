@@ -8,7 +8,7 @@
     @apply list-none shrink-0 text-sm md:text-base flex flex-col sm:flex-row sm:justify-end sm:pr-0 items-start sm:items-center flex-grow gap-5 max-w-6xl sm:px-6 justify-end 
 }
 .sidenav .link{
-    @apply flex shrink justify-center items-center h-full py-3 sm:px-6 text-white flex-col;
+    @apply flex shrink justify-center items-center h-full py-3 sm:px-2 md:px-4 lg:px-6 text-white flex-col;
     &::first-child{
         @apply sm:ml-auto
     }

@@ -5,6 +5,7 @@ import Projects from "./pages/projects/projects";
 import Sidenav from "./components/sidenav/sidenav";
 import { useEffect, useRef, useState } from "react";
 import Contact from "./pages/contact/contact";
+import SayHi from "./pages/sayHi/sayHi";
 function App() {
   const [selectedLink, setSlecectedLink] = useState<string>("");
 
@@ -82,6 +83,9 @@ function App() {
         className="section w-full flex justify-center bg-slate-900"
       >
         <Contact />
+      </div>
+      <div id="say-hi" className="w-full flex justify-center">
+        <SayHi />
       </div>
     </Layout>
   );

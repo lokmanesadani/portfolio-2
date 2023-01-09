@@ -100,18 +100,18 @@ const Projects = () => {
                     );
                   })}
                 </div>
-                <div className="pt-3 sm:pt-6 text-sm sm:text-lg font-monterastBold">
+                <div className="pt-3 sm:pt-6 text-base sm:text-lg font-monterastBold">
                   {project.title}
                 </div>
-                <div className="max-sm:text-xs pt-1 text-justify">
+                <div className="max-sm:text-sm pt-1 text-justify">
                   {project.description}
                 </div>
                 <div className="mt-auto flex flex-row justify-between items-center">
                   <span className=" max-sm:text-sm font-monterastSemiBold">
                     {project.date}
                   </span>
-                  <span className=" bg-sky-700 max-sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded">
-                    Live demo
+                  <span className=" bg-sky-700 max-sm:text-base px-2 py-1 sm:px-3 sm:py-2 rounded">
+                    <a href={project.link}>Live demo</a>
                   </span>
                 </div>
               </div>

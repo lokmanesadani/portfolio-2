@@ -47,27 +47,27 @@ const Introduction = () => {
           <Developer />
         </div>
       </div>
-      <div className="col-span-2 sm:col-start-2 flex-[0.2] text-white flex  justify-evenly text-xl sm:text-3xl items-center">
+      <div className="col-span-2 max-md:mt-8 sm:col-start-2 flex-[0.2] text-white flex  justify-evenly text-xl sm:text-3xl items-center">
         <div className=" w-1/6 sm:w-1/5 h-[1px] bg-white rounded-full"></div>
-        <a>
+        <a href="https://www.linkedin.com/in/lokmane-sadani-b843421bb/">
           <FontAwesomeIcon
             icon={faLinkedin}
             className=" hover:scale-150 transition-all cursor-pointer"
           />
         </a>
-        <a>
+        <a href="https://github.com/lokmanesadani?tab=overview&from=2023-01-01&to=2023-01-09">
           <FontAwesomeIcon
             icon={faGithub}
             className=" cursor-pointer hover:scale-150 transition-all"
           />
         </a>
-        <a>
+        <a href="https://www.facebook.com/profile.php?id=100012091511985">
           <FontAwesomeIcon
             className="hover:scale-150 transition-all cursor-pointer"
             icon={faFacebook}
           />
         </a>
-        <a>
+        <a href="https://www.instagram.com/lok_mane.s">
           <FontAwesomeIcon
             icon={faInstagram}
             className=" hover:scale-150 transition-all cursor-pointer"
