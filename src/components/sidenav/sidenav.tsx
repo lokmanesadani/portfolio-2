@@ -13,13 +13,24 @@ const Sidenav = (props: {
   const [windowTop, setWindowTop] = useState<boolean>(true);
   const [selectedLink, setSelectedLink] = useState<string>("");
   const [opened, setOpened] = useState<boolean>(false);
+  const [lagOpened, setLangOpened] = useState<boolean>(false);
   const items: SideNavItem[] = [
     { icon: "Home", id: "intro" },
     { icon: "About", id: "about" },
     { icon: "Projects", id: "projects" },
     { icon: "Contact", id: "contact" },
   ];
-
+  const downloadCV = (lang: string) => {
+    fetch(`/src/assets/CV-${lang}-SADANI.pdf`)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const file = window.URL.createObjectURL(blob);
+        let link = document.createElement("a");
+        link.href = file;
+        link.download = `CV-${lang}-SADANI.pdf`;
+        link.click();
+      });
+  };
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setWindowTop(window.pageYOffset > 10);
@@ -31,12 +42,17 @@ const Sidenav = (props: {
   }, [props.selectedLink]);
   return (
     <div
-      className={`sidenav z-50 transition-colors ${
+      className={`sidenav z-40 transition-colors ${
         opened ? "max-sm:h-[400px] " : "h-[70px]"
       } ${windowTop ? " bg-slate-900 " : " bg-backgound "}`}
     >
       <ul>
-        <div className="text-3xl h-[70px] items-center justify-between flex flex-row grow max-sm:w-full shrink-0 sm:text-sm font-monterastBold italic mr-auto text-white">
+        <div
+          onClick={() => {
+            setLangOpened(false);
+          }}
+          className="text-3xl h-[70px] items-center justify-between flex flex-row grow max-sm:w-full shrink-0 sm:text-sm font-monterastBold italic mr-auto text-white"
+        >
           <Logo height={50} />
           <div
             className={`w-8 h-8 close-btn ${
@@ -44,7 +60,12 @@ const Sidenav = (props: {
                 ? "before:rotate-45 before:top-1/2 after:top-1/2 after:-rotate-45"
                 : ""
             }`}
-            onClick={() => setOpened(!opened)}
+            onClick={() => {
+              setOpened(!opened);
+              if (opened) {
+                setLangOpened(false);
+              }
+            }}
           >
             <div
               className={`w-1/2 h-1 ${opened ? "" : " bg-white"} rounded`}
@@ -70,7 +91,34 @@ const Sidenav = (props: {
               </a>
             );
           })}
-          <li>Download CV</li>
+          <div className="relative ">
+            <div
+              className="download relative z-40 cursor-pointer"
+              onClick={() => {
+                setLangOpened(!lagOpened);
+              }}
+            >
+              Download CV
+            </div>
+            <div
+              className={`lang absolute  max-sm:-translate-y-full rounded overflow-hidden left-[calc(100%+1px)] top-full sm:left-0 z-50 w-10/12 bg-white ${
+                lagOpened ? "visible" : "invisible"
+              }`}
+            >
+              <div
+                onClick={() => downloadCV("FR")}
+                className=" cursor-pointer px-4 py-3 text-slate-900 border-b-2 border-slate-300 hover:bg-slate-100"
+              >
+                French
+              </div>
+              <div
+                onClick={() => downloadCV("EN")}
+                className=" cursor-pointer px-4 py-3 text-slate-900  hover:bg-slate-100"
+              >
+                English
+              </div>
+            </div>
+          </div>
         </div>
       </ul>
     </div>
