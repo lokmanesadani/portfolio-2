@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./projects.scss";
 import ProjectsData from "../../utils/projects.json";
+import { motion } from "framer-motion";
 interface Project {
   title: string;
   date: string;
@@ -17,11 +18,21 @@ const Projects = () => {
 
   return (
     <div className="max-w-7xl w-full overflow-hidden  py-10 flex flex-col items-center px-6">
-      <span className="text-white font-monterastSemiBold text-4xl pb-10 pt-4">
+      <motion.span
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-white font-monterastSemiBold text-4xl pb-10 pt-4"
+      >
         Projects
-      </span>
+      </motion.span>
       <div className="w-full flex text-white max-sm:text-xs flex-row justify-end">
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
           className={` transition-colors rounded-l-lg px-4 sm:px-10 py-2 sm:py-4 cursor-pointer ${
             selectedLink === "All"
               ? "bg-icon text-backgound font-black"
@@ -34,8 +45,12 @@ const Projects = () => {
           }}
         >
           All
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
           className={` transition-colors px-4 sm:px-10 py-2 sm:py-4 cursor-pointer ${
             selectedLink === "Personel"
               ? "bg-icon text-backgound font-black"
@@ -51,8 +66,12 @@ const Projects = () => {
           }}
         >
           Personel
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0 }}
+          viewport={{ once: true }}
           className={` transition-colors px-4 sm:px-10 py-2 sm:py-4 rounded-r-lg  cursor-pointer ${
             selectedLink === "Professional"
               ? "bg-icon text-backgound font-black"
@@ -68,14 +87,22 @@ const Projects = () => {
           }}
         >
           Professional
-        </div>
+        </motion.div>
       </div>
       <div
         className={`grid md:grid-cols-2 lg:grid-cols-3  gap-6 place-items-center grid-cols-1 transition-all w-full py-16`}
       >
         {filtered.map((project, index) => {
           return (
-            <div
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1 + 0.2,
+                easings: "easeInOut",
+              }}
               key={index}
               className={`card ${index > 5 && !show ? "hidden" : ""}`}
             >
@@ -115,18 +142,22 @@ const Projects = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
         onClick={() => {
           setShow(!show);
         }}
         className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base bg-text text-white"
       >
         View all
-      </div>
+      </motion.div>
     </div>
   );
 };

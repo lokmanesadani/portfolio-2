@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import FormInput from "../../components/formInput/formInput";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
 const sendEmail = (data: any) => {
   emailjs.send(
     "service_c6yrlwg",
@@ -53,18 +54,37 @@ const Contact = () => {
           })}
         >
           <div className="grid w-full grid-cols-1 sm:grid-cols-2 gap-x-5 sm:gap-y-8 gap-y-5 grow">
-            {fields.map((field) => (
-              <FormInput
-                key={field.name}
-                type={field.type}
-                name={field.name}
-                placeholder={field.placeholder}
-                reg={register(field.name, { required: true })}
-                error={errors[field.name]}
-              />
+            {fields.map((field, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.1,
+                  easings: "easeInOut",
+                }}
+                viewport={{ once: true }}
+              >
+                <FormInput
+                  type={field.type}
+                  name={field.name}
+                  placeholder={field.placeholder}
+                  reg={register(field.name, { required: true })}
+                  error={errors[field.name]}
+                />
+              </motion.div>
             ))}
           </div>
-          <textarea
+          <motion.textarea
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.4,
+              easings: "easeInOut",
+            }}
+            viewport={{ once: true }}
             className="bg-transparent border border-slate-500 text-slate-300 focus:border-slate-100 w-full px-3 sm:px-4 text-lg py-3 sm:py-4 aspect-[2.5] min-h-[300px] rounded focus:outline-none resize-none mt-6 sm:mt-8"
             {...register("message", { required: true })}
             name="message"
@@ -76,12 +96,20 @@ const Contact = () => {
             </span>
           )}
 
-          <button
+          <motion.button
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              duration: 1,
+              delay: 0.7,
+              easings: "easeInOut",
+            }}
+            viewport={{ once: true }}
             className="bg-icon mt-8 w-fit text-slate-900 font-monterastSemiBold rounded px-8 py-4"
             type="submit"
           >
             Submit
-          </button>
+          </motion.button>
         </form>
       </div>
     </div>

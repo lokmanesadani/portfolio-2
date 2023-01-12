@@ -1,6 +1,7 @@
 import "./sidenav.scss";
 import { useEffect, useState } from "react";
 import Logo from "./../logo";
+import { motion } from "framer-motion";
 interface SideNavItem {
   icon: string;
   id: string;
@@ -47,7 +48,10 @@ const Sidenav = (props: {
       } ${windowTop ? " bg-slate-900 " : " bg-backgound "}`}
     >
       <ul>
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
           onClick={() => {
             setLangOpened(false);
           }}
@@ -71,11 +75,14 @@ const Sidenav = (props: {
               className={`w-1/2 h-1 ${opened ? "" : " bg-white"} rounded`}
             ></div>
           </div>
-        </div>
+        </motion.div>
         <div className={`list p-0 max-sm:pt-2 max-sm:pb-4`}>
           {items.map((item, index) => {
             return (
-              <a
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
                 onClick={() => {
                   props.scrollTo(item.id);
                 }}
@@ -88,18 +95,21 @@ const Sidenav = (props: {
                     selectedLink === item.id ? " w-full" : "hover"
                   }`}
                 ></span>
-              </a>
+              </motion.div>
             );
           })}
           <div className="relative ">
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
               className="download relative z-40 cursor-pointer"
               onClick={() => {
                 setLangOpened(!lagOpened);
               }}
             >
               Download CV
-            </div>
+            </motion.div>
             <div
               className={`lang absolute  max-sm:-translate-y-full rounded overflow-hidden left-[calc(100%+1px)] top-full sm:left-0 z-50 w-10/12 bg-white ${
                 lagOpened ? "visible" : "invisible"

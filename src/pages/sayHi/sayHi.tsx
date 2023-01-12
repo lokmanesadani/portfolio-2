@@ -4,9 +4,19 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 const SayHi = () => {
   return (
-    <div className=" w-80 rounded-full my-16 font-cairoBold gap-8 flex flex-col items-center justify-center overflow-hidden sm:w-96 aspect-square text-white border-2">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.3,
+        easings: "easeInOut",
+      }}
+      className=" w-80 rounded-full my-16 font-cairoBold gap-8 flex flex-col items-center justify-center overflow-hidden sm:w-96 aspect-square text-white border-2"
+    >
       <div className="text-3xl sm:text-4xl ">Let's Say Hi</div>
       <div className="text-2xl text-red-300 sm:text-3xl italic font-thin">
         hl_sadani@esi.dz
@@ -28,7 +38,7 @@ const SayHi = () => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
