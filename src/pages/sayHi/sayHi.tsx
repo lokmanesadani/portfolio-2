@@ -15,6 +15,7 @@ const SayHi = () => {
         delay: 0.3,
         easings: "easeInOut",
       }}
+      viewport={{ once: true }}
       className=" w-80 rounded-full my-16 font-cairoBold gap-8 flex flex-col items-center justify-center overflow-hidden sm:w-96 aspect-square text-white border-2"
     >
       <div className="text-3xl sm:text-4xl ">Let's Say Hi</div>
