@@ -4,9 +4,6 @@
 .card:hover > .backdrop{
     @apply  opacity-70 visible
 }
-.card:hover > img{
-    @apply  blur-xl brightness-0
-}
 .backdrop{
     @apply  absolute rounded-sm top-0 left-0 transition-all opacity-0  z-20 invisible h-full w-full bg-black content-['']
 }
