@@ -22,17 +22,17 @@ const SayHi = () => {
         hl_sadani@esi.dz
       </div>
       <div className="flex flex-row gap-12 text-3xl sm:text-4xl">
-        <div className=" cursor-pointer">
+        <div className=" cursor-pointer  hover:scale-125 transition-all">
           <a href="https://www.instagram.com/lok_mane.s">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
         </div>
-        <div className=" cursor-pointer">
+        <div className=" cursor-pointer  hover:scale-125 transition-all">
           <a href="https://www.facebook.com/profile.php?id=100012091511985">
             <FontAwesomeIcon icon={faFacebook} />
           </a>
         </div>
-        <div className=" cursor-pointer">
+        <div className=" cursor-pointer hover:scale-125 transition-all">
           <a href="https://www.linkedin.com/in/lokmane-sadani-b843421bb/">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>

@@ -154,7 +154,7 @@ const Projects = () => {
         onClick={() => {
           setShow(!show);
         }}
-        className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base bg-text text-white"
+        className=" cursor-pointer px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base bg-text text-white"
       >
         View all
       </motion.div>

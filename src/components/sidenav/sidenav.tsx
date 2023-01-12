@@ -86,7 +86,7 @@ const Sidenav = (props: {
                 onClick={() => {
                   props.scrollTo(item.id);
                 }}
-                className={`link`}
+                className={`link  cursor-pointer `}
                 key={index}
               >
                 {item.icon}
@@ -100,9 +100,9 @@ const Sidenav = (props: {
           })}
           <div className="relative ">
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.9, delay: 0.2 }}
               className="download relative z-40 cursor-pointer"
               onClick={() => {
                 setLangOpened(!lagOpened);
