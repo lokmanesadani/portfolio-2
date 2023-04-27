@@ -15,7 +15,10 @@
   font-family: "Monterast Bold";
   src: url("/fonts/Montserrat-Bold.ttf");
 }
-
+@font-face {
+  font-family: 'Monterast ExtraBold';
+  src: url('/fonts/Montserrat-ExtraBold.ttf');
+}
 @font-face {
   font-family: "Monterast Black";
   src: url("/fonts/Montserrat-Black.ttf");
@@ -23,6 +26,25 @@
 @font-face {
   font-family: "Cairo Bold";
   src: url("/fonts/Cairo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Calibre";
+  src: url("/fonts/Calibre-Regular.woff2");
+}
+@font-face {
+  font-family: "Calibre Bold";
+  src: url("/fonts/Calibre-Bold.woff2");
+}
+
+@font-face {
+  font-family: "Calibre SemiBold";
+  src: url("/fonts/Calibre-Semibold.woff2");
+}
+
+@font-face {
+  font-family: "Calibre Black";
+  src: url("/fonts/Calibre-Black.woff2");
 }
 :root {
   margin: 0;

@@ -2,10 +2,10 @@
     @apply  fixed sm:sticky top-0 left-0 max-sm:border-b-[1px] border-slate-300 border-opacity-50   w-full flex  justify-center transition-all duration-500 ease-in-out
 }
 .sidenav ul{
-    @apply flex flex-col max-sm:overflow-hidden  sm:flex-row sm:justify-center items-start sm:items-center flex-grow  max-w-7xl px-6
+    @apply flex flex-col max-sm:overflow-hidden  sm:flex-row sm:justify-center items-start sm:items-center flex-grow  px-6
 }
 .sidenav ul .list{
-    @apply list-none shrink-0 text-sm md:text-base flex flex-col sm:flex-row sm:justify-end sm:pr-0 items-start sm:items-center flex-grow gap-5 max-w-6xl sm:px-6 justify-end 
+    @apply list-none shrink-0 text-xs max-sm:min-h-[319px] md:text-sm font-medium flex flex-col sm:flex-row sm:justify-end sm:pr-0 items-start sm:items-center flex-grow gap-5 max-w-6xl sm:px-6 justify-end 
 }
 .sidenav .link{
     @apply flex shrink justify-center items-center h-full py-3 sm:px-2 md:px-4 lg:px-6 text-white flex-col;

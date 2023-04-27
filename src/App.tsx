@@ -6,6 +6,8 @@ import Sidenav from "./components/sidenav/sidenav";
 import { useEffect, useRef, useState } from "react";
 import Contact from "./pages/contact/contact";
 import SayHi from "./pages/sayHi/sayHi";
+import Brands from "./components/brands";
+
 function App() {
   const [selectedLink, setSlecectedLink] = useState<string>("");
 
@@ -63,6 +65,7 @@ function App() {
         isScrolling={trackScroll}
         scrollTo={handleButtonClick}
       />
+      <Brands />
       <div
         id="intro"
         className="section w-full flex justify-center overflow-x-hidden "
@@ -71,17 +74,14 @@ function App() {
       </div>
       <div
         id="about"
-        className="section  w-full flex justify-center bg-slate-900 overflow-x-hidden"
+        className="section  w-full flex justify-center  overflow-x-hidden"
       >
         <About />
       </div>
       <div id="projects" className="section   w-full flex justify-center">
         <Projects />
       </div>
-      <div
-        id="contact"
-        className="section w-full flex justify-center bg-slate-900"
-      >
+      <div id="contact" className="section w-full flex justify-center">
         <Contact />
       </div>
       <div id="say-hi" className="w-full flex justify-center">

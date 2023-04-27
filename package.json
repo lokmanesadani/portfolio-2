@@ -21,7 +21,9 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.41.5",
     "react-router-dom": "^6.6.1",
-    "react-router-hash-link": "^2.4.3"
+    "react-router-hash-link": "^2.4.3",
+    "typeface-tajawal": "^1.1.13",
+    "typeface-work-sans": "^1.1.13"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

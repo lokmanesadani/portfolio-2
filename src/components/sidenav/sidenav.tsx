@@ -43,8 +43,8 @@ const Sidenav = (props: {
   }, [props.selectedLink]);
   return (
     <div
-      className={`sidenav z-40 transition-colors ${
-        opened ? "max-sm:h-[400px] " : "h-[70px]"
+      className={`sidenav z-40 transition-all overflow-hidden ${
+        opened ? "max-sm:h-[400px] " : "h-[80px]"
       } ${windowTop ? " bg-slate-900 " : " bg-backgound "}`}
     >
       <ul>
@@ -55,7 +55,7 @@ const Sidenav = (props: {
           onClick={() => {
             setLangOpened(false);
           }}
-          className="text-3xl h-[70px] items-center justify-between flex flex-row grow max-sm:w-full shrink-0 sm:text-sm font-monterastBold italic mr-auto text-white"
+          className="text-3xl  max-h-[80px] h-[80px] items-center justify-between flex flex-row grow max-sm:w-full shrink-0 sm:text-sm font-monterastBold italic mr-auto text-white"
         >
           <Logo height={50} />
           <div
