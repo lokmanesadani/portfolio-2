@@ -105,7 +105,7 @@ const Contact = () => {
               easings: "easeInOut",
             }}
             viewport={{ once: true }}
-            className="bg-icon mt-8 w-fit text-slate-900 font-monterastSemiBold rounded px-8 py-4"
+            className="bg-amber-400 mt-8 w-fit text-slate-900 font-monterastSemiBold rounded px-8 py-4"
             type="submit"
           >
             Submit

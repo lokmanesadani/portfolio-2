@@ -10,14 +10,13 @@ import { motion } from "framer-motion";
 const Brands = () => {
   return (
     <div className="max-md:hidden">
-      <div className="flex flex-col right-0 fixed bottom-0 px-2 gap-6 items-center  w-[88px] ">
-        <span
-          className="text-gray-200 hover:opacity-100 font-light hover:text-icon hover:-translate-y-1 transition-all duration-75 cursor-pointer w-6 h-fit text-opacity-60"
+      <div className="flex flex-col right-0 fixed bottom-0 px-2  items-center  w-[88px] ">
+        <div
+          className="text-gray-200 hover:opacity-100 w-14 flex items-center mb-4 py-4 duration-[200ms]  text-sm font-light hover:text-amber-400 hover:mb-5 ease-[cubic-bezier(0.645,0.045,0.355,1)] transition-all  cursor-pointer   text-opacity-60"
           style={{ writingMode: "vertical-rl" }}
         >
-          {" "}
           hl_sadani@esi.dz
-        </span>
+        </div>
         <div className="h-24 w-[1px] bg-white opacity-90" />
       </div>
       <div className="flex flex-col fixed bottom-0 px-2 gap-6 items-center  w-[88px]">
@@ -29,7 +28,7 @@ const Brands = () => {
         >
           <FontAwesomeIcon
             icon={faLinkedin}
-            className=" hover:-translate-y-1 transition-all duration-75 cursor-pointer w-5 h-fit text-gray-200 opacity-60 hover:opacity-100 hover:text-icon"
+            className=" hover:-translate-y-[2px] transition-all duration-200 ease-in-out cursor-pointer w-5 h-fit text-gray-200 opacity-60 hover:opacity-100 hover:text-amber-400"
           />
         </motion.a>
         <motion.a
@@ -40,7 +39,7 @@ const Brands = () => {
         >
           <FontAwesomeIcon
             icon={faGithub}
-            className=" cursor-pointer hover:-translate-y-1 transition-all duration-75 w-5 h-fit text-gray-200 opacity-60 hover:opacity-100 hover:text-icon"
+            className=" cursor-pointer hover:-translate-y-[2px] transition-all duration-200 ease-in-out w-5 h-fit text-gray-200 opacity-60 hover:opacity-100 hover:text-amber-400"
           />
         </motion.a>
         <motion.a
@@ -50,7 +49,7 @@ const Brands = () => {
           href="https://www.facebook.com/profile.php?id=100012091511985"
         >
           <FontAwesomeIcon
-            className="hover:-translate-y-1 transition-all duration-75 cursor-pointer w-5 h-fit text-gray-200 opacity-60 hover:opacity-100 hover:text-icon"
+            className="hover:-translate-y-[2px] transition-all duration-200 ease-in-out cursor-pointer w-5 h-fit text-gray-200 opacity-60 hover:opacity-100 hover:text-amber-400"
             icon={faFacebook}
           />
         </motion.a>
@@ -62,7 +61,7 @@ const Brands = () => {
         >
           <FontAwesomeIcon
             icon={faInstagram}
-            className="hover:-translate-y-1 transition-all duration-75 cursor-pointer w-5 h-fit text-gray-200 opacity-60 hover:opacity-100 hover:text-icon"
+            className="hover:-translate-y-[2px] transition-all duration-200 ease-in-out cursor-pointer w-5 h-fit text-gray-200 opacity-60 hover:opacity-100 hover:text-amber-400"
           />
         </motion.a>
 

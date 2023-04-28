@@ -12,87 +12,22 @@ interface Project {
 }
 
 const Projects = () => {
-  const [selectedLink, setSlecectedLink] = useState<string>("All");
-  const [show, setShow] = useState<boolean>(false);
-  const [filtered, setFiltered] = useState<Project[]>(ProjectsData);
-
   return (
-    <div className="max-w-7xl w-full overflow-hidden  py-10 flex flex-col items-center px-6">
+    <div className="max-w-6xl w-full   max-sm:pb-16  flex flex-col px-6 sm:px-10 md:px-24">
       <motion.span
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true }}
-        className="text-white font-monterastSemiBold text-4xl pb-10 pt-4"
+        className="text-white flex gap-4 items-center font-monterastSemiBold  text-2xl pb-16 pt-6"
       >
-        Projects
+        <span className="text-amber-400 text-2xl">02.</span> projects
+        <div className="w-full h-[1px] bg-white opacity-50 rounded flex-1 md:mr-[20%]"></div>
       </motion.span>
-      <div className="w-full flex text-white max-sm:text-xs flex-row justify-end">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true }}
-          className={` transition-colors rounded-l-lg px-4 sm:px-10 py-2 sm:py-4 cursor-pointer ${
-            selectedLink === "All"
-              ? "bg-icon text-backgound font-black"
-              : "bg-slate-800"
-          }`}
-          onClick={() => {
-            setSlecectedLink("All");
-            setFiltered(ProjectsData);
-            setShow(false);
-          }}
-        >
-          All
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
-          className={` transition-colors px-4 sm:px-10 py-2 sm:py-4 cursor-pointer ${
-            selectedLink === "Personel"
-              ? "bg-icon text-backgound font-black"
-              : "bg-slate-800"
-          }`}
-          onClick={() => {
-            setSlecectedLink("Personel");
-            const filteredProjects = ProjectsData.filter(
-              (project) => project.type === "Personel"
-            );
-            setFiltered(filteredProjects);
-            setShow(false);
-          }}
-        >
-          Personel
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0 }}
-          viewport={{ once: true }}
-          className={` transition-colors px-4 sm:px-10 py-2 sm:py-4 rounded-r-lg  cursor-pointer ${
-            selectedLink === "Professional"
-              ? "bg-icon text-backgound font-black"
-              : "bg-slate-800"
-          }`}
-          onClick={() => {
-            setSlecectedLink("Professional");
-            const filteredProjects = ProjectsData.filter(
-              (project) => project.type === "Professional"
-            );
-            setFiltered(filteredProjects);
-            setShow(false);
-          }}
-        >
-          Professional
-        </motion.div>
-      </div>
       <div
-        className={`grid md:grid-cols-2 lg:grid-cols-3  gap-6 place-items-center grid-cols-1 transition-all w-full py-16`}
+        className={`grid md:grid-cols-2 lg:grid-cols-3  gap-6 place-items-center grid-cols-1 transition-all w-full pb-16`}
       >
-        {filtered.map((project, index) => {
+        {ProjectsData.map((project, index) => {
           return (
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
@@ -104,7 +39,7 @@ const Projects = () => {
                 easings: "easeInOut",
               }}
               key={index}
-              className={`card ${index > 5 && !show ? "hidden" : ""}`}
+              className={`card `}
             >
               <div className=" absolute top-0 left-0 z-10 h-full w-full ">
                 <img
@@ -146,18 +81,6 @@ const Projects = () => {
           );
         })}
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        onClick={() => {
-          setShow(!show);
-        }}
-        className=" cursor-pointer px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base bg-text text-white"
-      >
-        View all
-      </motion.div>
     </div>
   );
 };

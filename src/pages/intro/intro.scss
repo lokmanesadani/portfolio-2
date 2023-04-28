@@ -1,0 +1,15 @@
+.hireMeButton{
+    @apply px-6 cursor-pointer py-3 w-fit  max-sm:text-base text-lg text-white font-monterastSemiBold rounded-md sm:mb-24 relative transition-all;
+    &::before{
+        @apply absolute top-0 left-0 w-14  h-full bg-gradient-to-r from-amber-400 to-amber-600 rounded-full;
+        content: "";
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover{
+        @apply text-backgound font-monterastBold;
+        &::before{
+            @apply w-full;
+        }
+    }
+}

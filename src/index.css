@@ -5,23 +5,28 @@
 @font-face {
   font-family: "Monterast";
   src: url("/fonts/montserrat-regular.woff2");
+  letter-spacing: 0px;
 }
 
 @font-face {
   font-family: "Monterast SemiBold";
   src: url("/fonts/Montserrat-SemiBold.ttf");
+  letter-spacing: 0px;
 }
 @font-face {
   font-family: "Monterast Bold";
   src: url("/fonts/Montserrat-Bold.ttf");
+  letter-spacing: 0px;
 }
 @font-face {
   font-family: 'Monterast ExtraBold';
   src: url('/fonts/Montserrat-ExtraBold.ttf');
+  letter-spacing: 0px;
 }
 @font-face {
   font-family: "Monterast Black";
   src: url("/fonts/Montserrat-Black.ttf");
+  letter-spacing: 0px;
 }
 @font-face {
   font-family: "Cairo Bold";

@@ -1,3 +1,28 @@
-.about-info{
+
+
+.wrapper{
+    @apply sm:w-96 md:w-80 w-4/6 relative aspect-square  ;
+    
+    .image{
+        @apply rounded absolute top-0 left-0 z-10 filter brightness-75
+        
+    }
+    .border{
+        @apply w-full z-0 aspect-square relative  top-4 left-4  border-none;
+        
+    }
+    &:hover{
+        .border{
+            @apply translate-x-1 translate-y-1
+        }
+        .image{
+            @apply -translate-x-1 -translate-y-1 filter brightness-105
+        }
+        
+    }
+    *{
+        @apply transition-all duration-300 ease-[cubic-bezier(0.645,0.045,0.355,1)]
+    }
     
 }
+
