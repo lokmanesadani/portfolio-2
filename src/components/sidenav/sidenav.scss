@@ -1,45 +1,41 @@
-.sidenav{
-    @apply  fixed sm:sticky top-0 left-0 max-sm:border-b-[1px] border-slate-300 border-opacity-50   w-full flex  justify-center transition-all duration-500 ease-in-out
+.sidenav {
+  @apply fixed top-0 left-0 w-full flex  justify-center transition-transform max-sm:transition-all ease-in-out bg-backgound bg-opacity-50 backdrop-blur-md;
 }
-.sidenav ul{
-    @apply flex flex-col max-sm:overflow-hidden  sm:flex-row sm:justify-center items-start sm:items-center flex-grow  px-6
+.sidenav ul {
+  @apply flex flex-col transition-all max-md:overflow-hidden  sm:flex-row sm:justify-center items-start sm:items-center flex-grow  px-6;
 }
-.sidenav ul .list{
-    @apply list-none shrink-0 text-xs max-sm:min-h-[319px] md:text-sm font-medium flex flex-col sm:flex-row sm:justify-end sm:pr-0 items-start sm:items-center flex-grow gap-5 max-w-6xl sm:px-6 justify-end 
+.sidenav ul .list {
+  @apply list-none transition-all max-sm:gap-4 text-[15.7px] font-light  md:text-base flex flex-col sm:flex-row sm:justify-end sm:pr-0 items-start sm:items-center flex-grow gap-3 max-w-6xl sm:px-6 justify-end;
 }
-.sidenav .link{
-    @apply flex shrink justify-center items-center h-full py-3 sm:px-2 md:px-4 lg:px-6 text-white flex-col;
-    &::first-child{
-        @apply sm:ml-auto
-    }
+.sidenav .link {
+  @apply flex justify-center items-center  py-3 sm:px-4 md:px-6  text-white flex-col;
+  &::first-child {
+    @apply sm:ml-auto;
+  }
 }
-.close-btn{
-    //create a humberger icon
-    @apply relative sm:hidden flex items-center cursor-pointer transition-all duration-100 ease-in-out;
-    &::before{
-        @apply absolute rounded top-0 left-0 w-full h-1 bg-white transition-all content-['']
-    }
-    &::after{
-        @apply absolute rounded bottom-0  w-full h-1 transition-all bg-white content-['']
-    }
-     
-}
-
-.download{
-    
-    @apply py-3 px-5 bg-amber-400 text-backgound font-monterastBold rounded
+.close-btn {
+  //create a humberger icon
+  @apply relative sm:hidden flex items-center cursor-pointer transition-all duration-100 ease-in-out;
+  &::before {
+    @apply absolute rounded top-0 left-0 w-full h-1 bg-white transition-all content-[''];
+  }
+  &::after {
+    @apply absolute rounded bottom-0  w-full h-1 transition-all bg-white content-[''];
+  }
 }
 
-.active{
-    @apply relative transition-all cursor-pointer bottom-0  left-0  h-[2px] bg-orange-400 rounded-full ;
-    content: '';
-
-}
-.hover{
-    @apply w-0 
+.download {
+  @apply py-3 px-5 bg-amber-400 text-backgound font-extrabold text-base rounded;
 }
 
-.sidenav .link:hover > .hover{
-    @apply w-1/3
+.active {
+  @apply relative transition-all cursor-pointer bottom-0  left-0  h-[2px] bg-orange-400 rounded-full;
+  content: "";
+}
+.hover {
+  @apply w-0;
 }
 
+.sidenav .link:hover > .hover {
+  @apply w-1/3;
+}

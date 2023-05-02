@@ -12,7 +12,7 @@ const Brands = () => {
     <div className="max-md:hidden">
       <div className="flex flex-col right-0 fixed bottom-0 px-2  items-center  w-[88px] ">
         <div
-          className="text-gray-200 hover:opacity-100 w-14 flex items-center mb-4 py-4 duration-[200ms]  text-sm font-light hover:text-amber-400 hover:mb-5 ease-[cubic-bezier(0.645,0.045,0.355,1)] transition-all  cursor-pointer   text-opacity-60"
+          className="text-gray-200 font-monterast hover:opacity-100 w-14 flex items-center mb-4 py-4 duration-[200ms]  text-sm font-thin hover:text-amber-400 hover:mb-5 ease-[cubic-bezier(0.645,0.045,0.355,1)] transition-all  cursor-pointer   text-opacity-60"
           style={{ writingMode: "vertical-rl" }}
         >
           hl_sadani@esi.dz

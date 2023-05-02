@@ -7,13 +7,13 @@ const Introduction = () => {
     window.location.href = gmailUrl;
   };
   return (
-    <div className="max-w-6xl w-full   max-sm:pb-16  flex flex-col px-6 sm:px-10 md:px-24 ">
+    <div className="max-w-6xl w-full  flex flex-col px-6 sm:px-10 md:px-24 ">
       <div className="w-full flex-1 flex flex-col max-sm:py-[70px] text-white  justify-center h-[450px] min-h-screen m">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
-          className="mb-7  text-amber-400 font-monterastSemiBold text-lg sm:text-2xl"
+          className="mb-7  text-amber-400 font-medium  text-2xl sm:text-3xl"
         >
           Hi, my name is
         </motion.div>
@@ -21,7 +21,7 @@ const Introduction = () => {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl md:text-6xl font-monterastExtraBold mb-7 text-white text-opacity-80"
+          className="text-4xl md:text-6xl font-extrabold mb-7 text-white text-opacity-80"
         >
           Lokmane Sadani.
         </motion.div>
@@ -29,7 +29,7 @@ const Introduction = () => {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-2xl md:text-5xl font-monterastBold mb-7 text-white text-opacity-40"
+          className="text-3xl md:text-5xl font-bold mb-7 text-white text-opacity-40"
         >
           I specialize in developing web applications.
         </motion.div>
@@ -38,7 +38,7 @@ const Introduction = () => {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="mb-16 text-xl max-sm:text-sm text-white text-opacity-90"
+          className="mb-16 text-xl max-sm:text-base font-thin text-white text-opacity-90"
         >
           I'm a sotfware engineer and a MERN Stack developer based in Algiers. I
           will help you transform your vision into a beautiful, functional

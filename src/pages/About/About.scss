@@ -1,10 +1,10 @@
 
 
 .wrapper{
-    @apply sm:w-96 md:w-80 w-4/6 relative aspect-square  ;
+    @apply sm:w-80 sm:h-80 w-7/12 relative aspect-square  ;
     
     .image{
-        @apply rounded absolute top-0 left-0 z-10 filter brightness-75
+        @apply w-full absolute top-0 left-0 z-10 filter brightness-75
         
     }
     .border{

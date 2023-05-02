@@ -6,21 +6,32 @@ interface SideNavItem {
   icon: string;
   id: string;
 }
-const Sidenav = (props: {
-  selectedLink: string;
-  isScrolling: boolean;
-  scrollTo: (arg0: string) => void;
-}) => {
-  const [windowTop, setWindowTop] = useState<boolean>(true);
-  const [selectedLink, setSelectedLink] = useState<string>("");
+const Sidenav = () => {
+  const [windowTop, setWindowTop] = useState<boolean>(false);
   const [opened, setOpened] = useState<boolean>(false);
   const [lagOpened, setLangOpened] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos === 0);
+      setOpened(false);
+      prevScrollPos = currentScrollPos;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const items: SideNavItem[] = [
-    { icon: "Home", id: "intro" },
     { icon: "About", id: "about" },
+    // { icon: "Experience", id: "experience" },
     { icon: "Projects", id: "projects" },
     { icon: "Contact", id: "contact" },
   ];
+
   const downloadCV = (lang: string) => {
     fetch(`/src/assets/CV-${lang}-SADANI.pdf`)
       .then((res) => res.blob())
@@ -32,20 +43,30 @@ const Sidenav = (props: {
         link.click();
       });
   };
+
+  useEffect(() => {
+    setWindowTop(window.pageYOffset > 10);
+  }, []);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setWindowTop(window.pageYOffset > 10);
     });
   }, [windowTop]);
 
-  useEffect(() => {
-    setSelectedLink(props.selectedLink);
-  }, [props.selectedLink]);
   return (
     <div
-      className={`sidenav z-40 transition-all overflow-hidden ${
-        opened ? "max-sm:h-[400px] " : "h-[80px]"
-      } ${windowTop ? " bg-slate-900 " : " bg-backgound "}`}
+      className={`sidenav z-40 transition-all
+      ${windowTop ? "shadow-lg" : ""} ${
+        opened
+          ? windowTop
+            ? "sm:h-[80px] h-[340px]"
+            : "sm:h-[100px] h-[360px]"
+          : windowTop
+          ? "h-[80px]"
+          : "h-[100px]"
+      } 
+      ${isVisible ? "translate-y-0" : "-translate-y-full"}
+      `}
     >
       <ul>
         <motion.div
@@ -55,7 +76,9 @@ const Sidenav = (props: {
           onClick={() => {
             setLangOpened(false);
           }}
-          className="text-3xl  max-h-[80px] h-[80px] items-center justify-between flex flex-row grow max-sm:w-full shrink-0 sm:text-sm font-monterastBold italic mr-auto text-white"
+          className={`text-3xl ${
+            windowTop ? "max-h-[80px]" : "max-h-[100px]"
+          }   h-full items-center justify-between flex flex-row grow max-sm:w-full shrink-0 sm:text-sm font-monterastBold italic mr-auto text-white`}
         >
           <Logo height={50} />
           <div
@@ -79,23 +102,16 @@ const Sidenav = (props: {
         <div className={`list p-0 max-sm:pt-2 max-sm:pb-4`}>
           {items.map((item, index) => {
             return (
-              <motion.div
+              <motion.a
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                onClick={() => {
-                  props.scrollTo(item.id);
-                }}
                 className={`link  cursor-pointer `}
                 key={index}
+                href={`#${item.id}`}
               >
                 {item.icon}
-                <span
-                  className={`active ${
-                    selectedLink === item.id ? " w-full" : "hover"
-                  }`}
-                ></span>
-              </motion.div>
+              </motion.a>
             );
           })}
           <div className="relative ">

@@ -22,6 +22,8 @@
     "react-hook-form": "^7.41.5",
     "react-router-dom": "^6.6.1",
     "react-router-hash-link": "^2.4.3",
+    "typeface-montserrat": "^1.1.13",
+    "typeface-mukta": "^1.1.13",
     "typeface-tajawal": "^1.1.13",
     "typeface-work-sans": "^1.1.13"
   },

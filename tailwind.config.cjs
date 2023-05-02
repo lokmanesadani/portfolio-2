@@ -5,15 +5,13 @@ module.exports = {
     extend: {
       colors: {
         backgound: "#011122",
+        lightBackgound: "#122131",
         icon: "#FFC800",
         text: "#D32638",
       },
       fontFamily: {
+        mukta: ["Mukta"],
         monterast: ["Monterast"],
-        monterastBold: ["Monterast Bold"],
-        monterastExtraBold: ["Monterast ExtraBold"],
-        monterastBlack: ["Monterast Black"],
-        monterastSemiBold: ["Monterast SemiBold"],
         cairoBold: ["Cairo Bold"],
       },
     },
