@@ -33,7 +33,7 @@ const Sidenav = () => {
   ];
 
   const downloadCV = (lang: string) => {
-    fetch(`/src/assets/CV-${lang}-SADANI.pdf`)
+    fetch(`/CV-${lang}-SADANI.pdf`)
       .then((res) => res.blob())
       .then((blob) => {
         const file = window.URL.createObjectURL(blob);
