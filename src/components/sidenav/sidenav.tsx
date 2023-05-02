@@ -32,18 +32,6 @@ const Sidenav = () => {
     { icon: "Contact", id: "contact" },
   ];
 
-  const downloadCV = (lang: string) => {
-    fetch(`/CV-${lang}-SADANI.pdf`)
-      .then((res) => res.blob())
-      .then((blob) => {
-        const file = window.URL.createObjectURL(blob);
-        let link = document.createElement("a");
-        link.href = file;
-        link.download = `CV-${lang}-SADANI.pdf`;
-        link.click();
-      });
-  };
-
   useEffect(() => {
     setWindowTop(window.pageYOffset > 10);
   }, []);
@@ -59,8 +47,8 @@ const Sidenav = () => {
       ${windowTop ? "shadow-lg" : ""} ${
         opened
           ? windowTop
-            ? "sm:h-[80px] h-[340px]"
-            : "sm:h-[100px] h-[360px]"
+            ? "sm:h-[80px] h-[350px]"
+            : "sm:h-[100px] h-[370px]"
           : windowTop
           ? "h-[80px]"
           : "h-[100px]"
@@ -114,6 +102,14 @@ const Sidenav = () => {
               </motion.a>
             );
           })}
+          {lagOpened && (
+            <div
+              onClick={() => {
+                setLangOpened(false);
+              }}
+              className="absolute top-0 left-0 w-screen h-screen"
+            />
+          )}
           <div className="relative ">
             <motion.div
               initial={{ opacity: 0 }}
@@ -124,24 +120,18 @@ const Sidenav = () => {
                 setLangOpened(!lagOpened);
               }}
             >
-              Download CV
+              Resume
             </motion.div>
             <div
               className={`lang absolute  max-sm:-translate-y-full rounded overflow-hidden left-[calc(100%+1px)] top-full sm:left-0 z-50 w-10/12 bg-white ${
                 lagOpened ? "visible" : "invisible"
               }`}
             >
-              <div
-                onClick={() => downloadCV("FR")}
-                className=" cursor-pointer px-4 py-3 text-slate-900 border-b-2 border-slate-300 hover:bg-slate-100"
-              >
-                French
+              <div className=" cursor-pointer px-4 py-3 text-slate-900  hover:bg-slate-100">
+                <a href="/CV-FR-SADANI.pdf">French</a>
               </div>
-              <div
-                onClick={() => downloadCV("EN")}
-                className=" cursor-pointer px-4 py-3 text-slate-900  hover:bg-slate-100"
-              >
-                English
+              <div className=" cursor-pointer px-4 py-3 text-slate-900  hover:bg-slate-100">
+                <a href="/CV-EN-SADANI.pdf">English</a>
               </div>
             </div>
           </div>

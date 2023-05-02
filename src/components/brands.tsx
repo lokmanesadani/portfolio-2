@@ -24,7 +24,7 @@ const Brands = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, type: "ease-in", delay: 0 }}
-          href="https://www.linkedin.com/in/lokmane-sadani-b843421bb/"
+          href="https://www.linkedin.com/in/lokmane-sadani"
         >
           <FontAwesomeIcon
             icon={faLinkedin}
@@ -35,7 +35,7 @@ const Brands = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, type: "ease-in", delay: 0.2 }}
-          href="https://github.com/lokmanesadani?tab=overview&from=2023-01-01&to=2023-01-09"
+          href="https://github.com/lokmanesadani"
         >
           <FontAwesomeIcon
             icon={faGithub}
