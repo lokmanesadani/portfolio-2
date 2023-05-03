@@ -58,12 +58,12 @@ const Projects = ({ index }: { index: number }) => {
         <div className="w-full h-[1px] bg-white opacity-50 rounded flex-1 md:mr-[20%]"></div>
       </motion.span>
       <div className={` grid-cols-1 transition-all w-full pb-16`}>
-        {ProjectsData.map((project: Project, index) => {
+        {ProjectsData.slice(0, 3).map((project: Project, index) => {
           return (
             <div
               className={`${
                 index % 2 == 0 ? "direction-rtl" : "direction-ltr"
-              } grid-container lg:mb-24 md:mb-20 sm:mb-16 mb-8`}
+              } grid-container lg:mb-28 md:mb-20 sm:mb-16 mb-8`}
             >
               <motion.div
                 initial={{ opacity: 0, x: index % 2 == 0 ? 50 : -50 }}
@@ -79,7 +79,7 @@ const Projects = ({ index }: { index: number }) => {
                 <div
                   className={`${
                     index % 2 == 0 ? "md:text-right" : "text-left"
-                  } font-light direction-ltr md:p-6 mt-8 rounded text-base  md:text-[15.5px] lg:text-base   bg-transparent md:bg-lightBackgound md:shadow-lg`}
+                  } font-light direction-ltr max-lg:md:p-6 mt-8 rounded text-base  md:text-[15.5px] lg:text-base   bg-transparent max-lg:md:bg-lightBackgound max-lg:md:shadow-lg`}
                 >
                   {project.description}
                 </div>

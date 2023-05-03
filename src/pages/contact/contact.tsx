@@ -1,38 +1,27 @@
-import { useForm } from "react-hook-form";
-import FormInput from "../../components/formInput/formInput";
-import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
-const sendEmail = (data: any) => {
-  emailjs.send(
-    "service_c6yrlwg",
-    "template_xwsy2ao",
-    { ...data },
-    "iL92_1oT4DwqtiZeA"
-  );
-};
+
 const Contact = () => {
   return (
-    <div className="max-w-7xl w-full overflow-hidden  py-10 flex flex-col items-center px-6">
-      <span className="text-white font-monterastSemiBold  text-4xl pb-10 pt-4">
-        Contact us
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.5,
+        easings: "easeInOut",
+      }}
+      viewport={{ once: true }}
+      className="max-w-7xl w-full overflow-hidden  py-10 flex flex-col items-center px-6 "
+    >
+      <span className="text-white font-semibold  text-5xl pb-10 pt-4">
+        Get in touch
       </span>
-      <div className="flex flex-col md:flex-row w-full sm:w-2/3 py-10">
-        <motion.button
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            duration: 1,
-            delay: 0.7,
-            easings: "easeInOut",
-          }}
-          viewport={{ once: true }}
-          className="bg-amber-400 mt-8 w-fit text-slate-900 font-monterastSemiBold rounded px-8 py-4"
-          type="submit"
-        >
-          Submit
-        </motion.button>
+      <div className="text-gray-300 text-xl font-light leading-8 max-w-2xl text-center mb-20">
+        I'm always looking for opportunities and challenges, and if you think we
+        could work together, please get in touch with me. My inbox is always
+        open, whether you have a job offer or simply just want to say hi.
       </div>
-    </div>
+      <button className="download">Submit</button>
+    </motion.div>
   );
 };
 

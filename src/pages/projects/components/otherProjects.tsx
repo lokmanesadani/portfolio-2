@@ -18,10 +18,7 @@ const otherProjects = () => {
           })}
       </div>
       <div className="flex justify-center items-center mt-10">
-        <button
-          onClick={() => setShow(!show)}
-          className="bg-gradient-to-r from-amber-400 font-bold leading-7 to-amber-600 hover:brightness-75 transition-all duration-300 px-4 py-2 pt-[9px] rounded-full text-backgound"
-        >
+        <button onClick={() => setShow(!show)} className="download px-6">
           {show ? "Show Less" : "Show More"}
         </button>
       </div>

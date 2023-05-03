@@ -4,15 +4,14 @@ import About from "./pages/About/about";
 import Projects from "./pages/projects/projects";
 import Sidenav from "./components/sidenav/sidenav";
 import Contact from "./pages/contact/contact";
-import SayHi from "./pages/sayHi/sayHi";
 import Brands from "./components/brands";
 import Experience from "./pages/Experience/experience";
+import Footer from "./pages/Footer/Footer";
 const items = [
   { element: About, id: "about" },
   // { element: Experience, id: "experience" },
   { element: Projects, id: "projects" },
   { element: Contact, id: "contact" },
-  { element: SayHi, id: "say-hi" },
 ];
 function App() {
   return (
@@ -34,6 +33,9 @@ function App() {
           {<item.element index={index + 1} />}
         </div>
       ))}
+      <div className="section w-full flex justify-center overflow-hidden ">
+        <Footer />
+      </div>
     </Layout>
   );
 }
