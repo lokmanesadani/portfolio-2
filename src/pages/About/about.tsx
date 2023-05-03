@@ -34,26 +34,15 @@ const About = ({ index }: { index: number }) => {
       <div className="w-full backdrop-blur-sm rounded-2xl text-[1.1rem] font-light flex flex-col h-full justify-evenly">
         <div className="flex flex-col lg:flex-row-reverse gap-12 max-lg:items-center">
           <div className="wrapper relative ">
-            <div className="image">
-              <motion.img
-                initial={{ opacity: 0.4, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                src="/Signature.jpg"
-                className="rounded"
-                alt=""
-              />
-            </div>
-            <div className="border">
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="border-white border-[4px] rounded-md w-full h-full hover:border-amber-400"
-              />
-            </div>
+            <motion.img
+              initial={{ opacity: 0.4, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              src="/Signature.jpg"
+              className="rounded border-4 md:border-[5px]"
+              alt=""
+            />
           </div>
           <div className="w-full   text-justify leading-[30px] text-white text-opacity-75">
             <motion.div
@@ -98,7 +87,7 @@ const About = ({ index }: { index: number }) => {
             >
               Here are a few technologies I’ve been working with recently :
             </motion.div>
-            <div className="grid grid-cols-2 pt-3">
+            <div className="flex flex-wrap gap-4 mt-4">
               {technologies.map((tech, index) => {
                 return (
                   <motion.div
@@ -107,13 +96,13 @@ const About = ({ index }: { index: number }) => {
                     transition={{ duration: 0.5, delay: 0.6 + 0.2 * index }}
                     viewport={{ once: true }}
                     key={index}
-                    className="flex items-center gap-4 text-white text-opacity-75"
+                    className="flex items-center gap-4 text-white px-4 py-1 rounded bg-gray-700 text-opacity-75 text-[15.5px] "
                   >
-                    <FontAwesomeIcon
+                    {/* <FontAwesomeIcon
                       className=" text-amber-400"
                       icon={faCaretRight}
-                    />
-                    <div className="text-[15.5px]">{tech}</div>
+                    /> */}
+                    {tech}
                   </motion.div>
                 );
               })}
