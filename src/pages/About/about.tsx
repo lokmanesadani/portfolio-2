@@ -91,8 +91,8 @@ const About = ({ index }: { index: number }) => {
               {technologies.map((tech, index) => {
                 return (
                   <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 + 0.2 * index }}
                     viewport={{ once: true }}
                     key={index}
