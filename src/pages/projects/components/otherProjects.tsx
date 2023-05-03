@@ -6,7 +6,7 @@ const otherProjects = () => {
   return (
     <div className="w-full">
       <h1 className="text-center font-semibold text-white text-opacity-90 text-3xl mb-10 ">
-        Other Noteworthy Projects
+        Other Projects
       </h1>
       <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
         {Projects.slice(0, 6).map((project, index) => {
